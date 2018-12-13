@@ -15,9 +15,9 @@
 		# Project Info
 	-->
 	<name>Discovery Server by Eureka</name>
-	<groupId>net.kkazo.cloud.eureka</groupId>
+	<groupId>net.kkazo.cloud.discovery</groupId>
 	<artifactId>eureka-server</artifactId>
-	<version>1.0.0.SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<!--
@@ -41,6 +41,10 @@
 		<!-- Guava -->
 		<guava.version>23.0</guava.version>
 
+		<!-- Spring Cloud -->
+		<spring.cloud.version>2.0.2.RELEASE</spring.cloud.version>
+
+
 	</properties>
 
 	<!--
@@ -52,6 +56,19 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<version>${spring.cloud.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<!-- Google Guava -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
 		</dependency>
 
 	</dependencies>
