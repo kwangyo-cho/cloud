@@ -1,0 +1,32 @@
+spring.profiles.active: local
+
+spring:
+  application:
+    name: api-gateway
+  banner.location: classpath:banner/framework.txt
+  # TODO:
+  # cloud:
+  #  config:
+  #    uri: ${CONFIG_SERVER_URL:http://localhost:10101}
+
+
+server:
+  port: ${port:6001}
+
+spring.cloud:
+    gateway:
+      discovery.locator:
+        enabled: true
+        lowerCaseServiceId: true
+
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:5001/eureka/
+    registerWithEureka: true	# 유레카 서버 등록 여부
+    allowRedirects: true		# 클라이언트의 요청을 클러스터로 리디렉션
+    fetchRegistry: false		# 서버의 등록정보 조회 여부
+
+management.security.enabled: false

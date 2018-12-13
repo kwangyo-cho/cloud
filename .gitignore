@@ -1,13 +1,22 @@
-# Created by .ignore support plugin (hsz.mobi)
-
-.idea/
-
-target/
+# intellij
+.idea
+*.iml
 out/
 
-*.iml
+# maven
+target/
 
+# Mac
+.DS_Store
+.AppleDouble
+.LSOverride
 
+# Windows
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+*.lnk
+
+# Log
 *.log
 *.out
-
