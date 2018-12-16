@@ -15,7 +15,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://127.0.0.1:5001/eureka/, http://127.0.0.1:5002/eureka/, http://127.0.0.1:5003/eureka/
+      defaultZone: http://127.0.0.1:5001/eureka/ #, http://127.0.0.1:5002/eureka/, http://127.0.0.1:5003/eureka/
     registerWithEureka: true	# 유레카 서버 등록 여부
     allowRedirects: true		# 클라이언트의 요청을 클러스터로 리디렉션
     fetchRegistry: false		# 서버의 등록정보 조회 여부

@@ -15,9 +15,29 @@ server:
 
 spring.cloud:
     gateway:
+#      globalcors:
+#        corsConfigurations:
+#          '[/**]':
+#            allowedOrigins: "*.kkazo.net"
+#            allowedMethods:
+#            - GET
       discovery.locator:
         enabled: true
         lowerCaseServiceId: true
+      routes:
+      - id: test
+        uri: http://127.0.0.1:6143
+        predicates:
+        - Path=/users/**
+      - id: user-routes
+        uri: lb://api-user
+        predicates:
+        - Path=/api/users/**
+        filters:
+        - RewritePath=/api/users/(?<segment>.*), /users/$\{segment}
+
+
+
 
 
 

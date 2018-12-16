@@ -32,15 +32,19 @@ public class GatewayApplication {
 		SpringApplication.run(GatewayApplication.class, args);
 	}
 
-	@Bean
-	public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
-		return builder.routes()
-			.route("user-route", r -> r
-				.path("/users")
-				.uri("lb://api-user")
-			)
-			.build();
-	}
+//	@Bean
+//	public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
+//		return builder.routes()
+//			.route("user-route", r -> r
+//				.path("/users")
+//				.uri("lb://api-user")
+//			)
+//			.route("test-route", r -> r
+//				.path("/actuator/info")
+//				.uri("lb://disvoery-eurek")
+//			)
+//			.build();
+//	}
 }
 
 
