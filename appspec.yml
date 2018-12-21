@@ -1,0 +1,8 @@
+version: 0.0
+os: linux
+files:
+  - source: /target
+    destination: /data/apps/cloud/
+#hooks:
+#  BeforeInstall:
+#    - location: scripts/cleanup_application  
