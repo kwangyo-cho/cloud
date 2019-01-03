@@ -1,4 +1,4 @@
-package net.kkazo.api.gateway.domain;
+package net.kkazo.prototype.redis.domain;
 
 public class User {
 

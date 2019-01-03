@@ -1,7 +1,7 @@
-package net.kkazo.api.gateway.repository;
+package net.kkazo.prototype.redis.repository;
 
 import com.google.common.collect.Lists;
-import net.kkazo.api.gateway.domain.User;
+import net.kkazo.prototype.redis.domain.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

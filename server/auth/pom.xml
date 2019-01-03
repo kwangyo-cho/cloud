@@ -14,9 +14,9 @@
 	<!--
 		# Project Info
 	-->
-	<name>Discovery Server by Eureka</name>
-	<groupId>net.kkazo.cloud.discovery</groupId>
-	<artifactId>eureka-server</artifactId>
+	<name>Auth Server by OAuth</name>
+	<groupId>net.kkazo.auth</groupId>
+	<artifactId>auth-server</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -52,16 +52,23 @@
 	-->
 	<dependencies>
 
-		<!-- Netflix Eureka -->
+		<!-- Spring Security -->
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-			<version>${spring.cloud.version}</version>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-jwt</artifactId>
 		</dependency>
 
+		<!-- OAuth2 -->
+		<dependency>
+			<groupId>org.springframework.security.oauth</groupId>
+			<artifactId>spring-security-oauth2</artifactId>
+		</dependency>
+
+		<!-- Thymeleaf3 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+			<version>${thymeleaf3.version}</version>
 		</dependency>
 
 		<!-- Google Guava -->
@@ -71,10 +78,22 @@
 			<version>${guava.version}</version>
 		</dependency>
 
+		<!-- Management -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<!-- Test -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
-		<finalName>discovery</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

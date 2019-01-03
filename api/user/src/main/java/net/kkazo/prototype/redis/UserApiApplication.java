@@ -7,7 +7,7 @@
  * For more information on this product, please see
  * https://www.kkazo.net
  */
-package net.kkazo.api.gateway;
+package net.kkazo.prototype.redis;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

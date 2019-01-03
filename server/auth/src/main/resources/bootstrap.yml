@@ -1,0 +1,111 @@
+
+spring.profiles.active: local
+
+# ==================================================================================================
+# Tomcat Server Settings
+# ==================================================================================================
+server:
+  tomcat:
+    remote_ip_header: x-forwarded-for
+    protocol_header: x-forwarded-proto
+# ==================================================================================================
+
+# ==================================================================================================
+# Spring Application Settings
+# ==================================================================================================
+spring.thymeleaf:
+  cache: false
+  mode: HTML5
+  prefix: classpath:views/
+# ==================================================================================================
+
+
+# ==================================================================================================
+# Spring Security Settings
+# ==================================================================================================
+security:
+  sessions: if-required
+#  oauth2:
+#    authorization:
+#      token-key-access: isAuthenticated()
+#    resource:
+#      filter-order: 3
+#      jwt:
+#        key-value: jwt_key_test
+# ==================================================================================================
+
+---
+
+spring:
+  profiles: local
+
+server:
+  port: 6000
+  contextPath: /
+#
+security:
+  user.password: 1111
+  oauth2:
+    authorization.token-key-access: isAuthenticated()
+    resource:
+      jwt:
+        key-value: secret
+#  oauth2:
+#    client:
+#      clientId: kkazo
+#      clientSecret: q1w2e3r4T%
+#      authorized-grant-types: authorization_code,refresh_token,password
+#      scope: all
+#      security.oauth2.client.accessTokenValiditySeconds: 10
+#security.oauth2:
+#    resource:
+#      filter-order: 3
+
+
+# ==================================================================================================
+# Database Settings
+#
+# schema: classpath:sql/mysql/schema.sql
+# ==================================================================================================
+
+# Database Setting
+spring.datasource:
+  driver-class-name: com.mysql.jdbc.Driver
+  url: jdbc:mysql://211.56.253.135/CMS?useSSL=false
+  username: cms
+  password: q1w2e3r4T%
+
+  data: classpath:sql/mysql/data.sql
+  hikari:
+    connection-test-query: SELECT 1
+    minimum-idle: 1
+    maximum-pool-size: 5
+    pool-name: mwave database pool with hikari
+
+# Mybatis
+mybatis:
+  config-location: classpath:mybatis/auth/config.xml
+  mapperLocations: classpath:mybatis/auth/mapper/*-mapper.xml
+
+# ==================================================================================================
+
+---
+
+spring:
+  profiles: test
+
+server:
+  port: 8080
+  contextPath: /uaa
+
+security:
+  user:
+    name: user
+    password: test
+
+  oauth2:
+    client:
+      client-id: kkazo
+      client-secret: q1w2e3r4T%
+    authorization:
+      check-token-access: isAuthenticated()

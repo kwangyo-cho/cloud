@@ -14,9 +14,9 @@
 	<!--
 		# Project Info
 	-->
-	<name>Discovery Server by Eureka</name>
-	<groupId>net.kkazo.cloud.discovery</groupId>
-	<artifactId>eureka-server</artifactId>
+	<name>Spring Data Redis</name>
+	<groupId>net.kkazo.prototype</groupId>
+	<artifactId>spring-data-redis</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -52,29 +52,14 @@
 	-->
 	<dependencies>
 
-		<!-- Netflix Eureka -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
-			<version>${spring.cloud.version}</version>
-		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-actuator</artifactId>
-		</dependency>
-
-		<!-- Google Guava -->
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>${guava.version}</version>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
 
 	</dependencies>
 
 	<build>
-		<finalName>discovery</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
